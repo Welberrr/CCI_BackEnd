@@ -1,11 +1,13 @@
 package com.cci.cafecomingles.alunos;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 
 import java.time.LocalDate;
 import java.util.UUID;
 
 @Entity
+@Getter
 public class Aluno {
 
     @Id

@@ -1,8 +1,10 @@
 package com.cci.cafecomingles.alunos;
 
 import jakarta.persistence.Embeddable;
+import lombok.Getter;
 
 @Embeddable
+@Getter
 public class Endereco {
 
     private String cidade;
