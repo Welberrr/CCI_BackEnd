@@ -1,9 +1,8 @@
 package com.cci.cafecomingles.alunos;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/alunos")
@@ -21,5 +20,10 @@ public class AlunoController {
         Aluno aluno = new Aluno(dados.nome(), dados.dataNascimento(), dados.cpf(), endereco);
 
         repository.save(aluno);
+    }
+
+    @GetMapping
+    public List<Aluno> listarTodos(){
+        return repository.findAll();
     }
 }
