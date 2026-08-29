@@ -26,4 +26,19 @@ public class AlunoController {
     public List<Aluno> listarTodos(){
         return repository.findAll();
     }
+
+    @GetMapping("/{id}")
+    public Aluno detalhar(@RequestBody AlunoDTO dados){
+        Endereco endereco = new Endereco(dados.cidade(), dados.estado(), dados.pais());
+        Aluno aluno = new Aluno(dados.nome(), dados.dataNascimento(), dados.cpf(), endereco);
+
+        aluno.getAtivo();
+        aluno.getCpf();
+        aluno.getDataNascimento();
+        aluno.getId();
+        aluno.getNome();
+        aluno.getEndereco();
+
+        return aluno;
+    }
 }
