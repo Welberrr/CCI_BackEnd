@@ -40,4 +40,8 @@ public class Aluno {
 
         this.endereco.atualizarInformacoes(dados);
     }
+
+    public void inativar(){
+        this.ativo = false;
+    }
 }

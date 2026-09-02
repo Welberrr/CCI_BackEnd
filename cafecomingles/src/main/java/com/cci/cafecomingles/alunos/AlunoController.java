@@ -40,4 +40,11 @@ public class AlunoController {
         Aluno aluno = repository.findById(dados.id()).get();
         aluno.atualizarInformacoes(dados);
     }
+
+    @Transactional
+    @DeleteMapping("/{id}")
+    public void inativarAluno(@PathVariable UUID id){
+       Aluno aluno = repository.findById(id).get();
+       aluno.inativar();
+    }
 }
