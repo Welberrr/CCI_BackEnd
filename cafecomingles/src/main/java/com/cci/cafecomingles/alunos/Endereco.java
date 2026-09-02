@@ -18,4 +18,18 @@ public class Endereco {
     }
 
     public Endereco() {}
+
+    public void atualizarInformacoes(DadosAtualizadosAluno dados){
+        if (dados.cidade() != null){
+            this.cidade = dados.cidade();
+        }
+
+        if (dados.estado() != null){
+            this.estado = dados.estado();
+        }
+
+        if (dados.pais() != null){
+            this.pais = dados.pais();
+        }
+    }
 }

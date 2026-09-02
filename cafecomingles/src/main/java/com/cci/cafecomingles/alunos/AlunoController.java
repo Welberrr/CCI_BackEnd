@@ -1,5 +1,6 @@
 package com.cci.cafecomingles.alunos;
 
+import jakarta.transaction.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -31,5 +32,12 @@ public class AlunoController {
     @GetMapping("/{id}")
     public Aluno detalhar(@PathVariable UUID id){
         return repository.findById(id).get();
+    }
+
+    @Transactional
+    @PutMapping
+    public void atualizar(@RequestBody DadosAtualizadosAluno dados){
+        Aluno aluno = repository.findById(dados.id()).get();
+        aluno.atualizarInformacoes(dados);
     }
 }

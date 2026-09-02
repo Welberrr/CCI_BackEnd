@@ -32,4 +32,12 @@ public class Aluno {
     }
 
     public Aluno() {}
+
+    public void atualizarInformacoes(DadosAtualizadosAluno dados){
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+
+        this.endereco.atualizarInformacoes(dados);
+    }
 }
