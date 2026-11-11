@@ -29,6 +29,12 @@ public class AlunoController {
         return repository.findAll();
     }
 
+    @GetMapping("/alunosAtivos")
+    public List<Aluno> listarAtivos() {return repository.findAllByAtivoTrue(); }
+
+    @GetMapping("/alunosInativos")
+    public List<Aluno> listarInativos() {return repository.findAllByAtivoFalse(); }
+
     @GetMapping("/{id}")
     public Aluno detalhar(@PathVariable UUID id){
         return repository.findById(id).get();
