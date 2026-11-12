@@ -1,6 +1,7 @@
 package com.cci.cafecomingles.alunos;
 
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class AlunoController {
     }
 
     @PostMapping
+    @Valid
     public void cadastrar(@RequestBody AlunoDTO dados){
         Endereco endereco = new Endereco(dados.cidade(), dados.estado(), dados.pais());
         Aluno aluno = new Aluno(dados.nome(), dados.dataNascimento(), dados.cpf(), endereco);
