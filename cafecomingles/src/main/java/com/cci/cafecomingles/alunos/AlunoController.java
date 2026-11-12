@@ -29,10 +29,10 @@ public class AlunoController {
         return repository.findAll();
     }
 
-    @GetMapping("/alunosAtivos")
+    @GetMapping("/ativos")
     public List<Aluno> listarAtivos() {return repository.findAllByAtivoTrue(); }
 
-    @GetMapping("/alunosInativos")
+    @GetMapping("/inativos")
     public List<Aluno> listarInativos() {return repository.findAllByAtivoFalse(); }
 
     @GetMapping("/{id}")
