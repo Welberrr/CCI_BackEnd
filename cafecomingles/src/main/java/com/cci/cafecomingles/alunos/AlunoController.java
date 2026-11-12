@@ -18,8 +18,7 @@ public class AlunoController {
     }
 
     @PostMapping
-    @Valid
-    public void cadastrar(@RequestBody AlunoDTO dados){
+    public void cadastrar(@RequestBody @Valid AlunoDTO dados){
         Endereco endereco = new Endereco(dados.cidade(), dados.estado(), dados.pais());
         Aluno aluno = new Aluno(dados.nome(), dados.dataNascimento(), dados.cpf(), endereco);
 
