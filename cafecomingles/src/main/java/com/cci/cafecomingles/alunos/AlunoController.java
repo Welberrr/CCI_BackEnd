@@ -9,6 +9,7 @@ import java.util.UUID;
 
 @RestController
 @RequestMapping("/alunos")
+@CrossOrigin(origins = "http://localhost:4200")
 public class AlunoController {
 
     private final AlunoRepository repository;
